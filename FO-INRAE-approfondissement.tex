@@ -1,0 +1,146 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{biblatex}
+\addbibresource{ExempleBib.bib}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Approfondissement -- LaTeX et outils connexes},
+  pdfauthor={Sébastien Mengin},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Approfondissement -- LaTeX et outils connexes}
+\author{Sébastien Mengin}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{gestion-des-documents-volumineux}{%
+\section{Gestion des documents
+volumineux}\label{gestion-des-documents-volumineux}}
+
+\begin{itemize}
+\tightlist
+\item
+  commandes \texttt{\textbackslash{}input} et
+  \texttt{\textbackslash{}include}
+\item
+  commande \texttt{\textbackslash{}includeonly}
+\item
+  dossiers pour les éléments graphiques et commande
+  \texttt{\textbackslash{}graphicspath\{\}}
+\item
+  package \texttt{comment}
+\end{itemize}
+
+\hypertarget{conversions-en-latex-et-word}{%
+\section{Conversions en LaTeX et
+Word}\label{conversions-en-latex-et-word}}
+
+\begin{itemize}
+\tightlist
+\item
+  pratiques actuelles
+\item
+  améliorations possibles ? (scripts ?)
+\item
+  utiliser LaTeX pour la mise en page finale {[}\^{}rédiger en markdown
+  le reste du temps{]}
+\end{itemize}
+
+\hypertarget{saisie-en-markdown}{%
+\section{Saisie en Markdown}\label{saisie-en-markdown}}
+
+\begin{itemize}
+\item
+  un exemple : https://opensource.com/article/18/9/pandoc-research-paper
+\item
+  gestion des bibliographies avec Zotero et l'extension better-bibtex
+  \autocite{smith2023economic}
+\item
+  exemple de commande à saisir dans un terminal pour exporter en LaTeX :
+
+\begin{verbatim}
+pandoc -f markdown -t latex --biblatex -s FO-INRAE-approfondissement.md -o FO-INRAE-approfondissement.tex
+\end{verbatim}
+\item
+  éditeur collaboratif en temps réel markdown ?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    stylo ? (https://stylo.huma-num.fr/)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ruxe9daction-collaborative-en-temps-ruxe9el-avec-overleaf}{%
+\section{Rédaction collaborative en temps réel avec
+Overleaf}\label{ruxe9daction-collaborative-en-temps-ruxe9el-avec-overleaf}}
+
+\begin{itemize}
+\item
+  limites d'Overleaf en version gratuite : 1 collaborateur max avec
+  droit d'écriture
+\item
+  solutions alternatives :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    gérer les droits d'accès aux différents collaborateurs (écriture,
+    lecture)
+  \item
+    utiliser des gestionnaires de version (github et cie). Limite :
+    asynchrone
+  \end{itemize}
+\end{itemize}
+
+\printbibliography
+
+\end{document}
