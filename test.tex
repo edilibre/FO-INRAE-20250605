@@ -1,0 +1,330 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Approfondissement -- LaTeX et outils connexes},
+  pdfauthor={Sébastien Mengin},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Approfondissement -- LaTeX et outils connexes}
+\author{Sébastien Mengin}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{questions-techniques-du-jour}{%
+\section{Questions techniques du
+jour}\label{questions-techniques-du-jour}}
+
+\hypertarget{gestion-des-documents-volumineux}{%
+\subsection{Gestion des documents
+volumineux}\label{gestion-des-documents-volumineux}}
+
+\begin{itemize}
+\tightlist
+\item
+  commandes \texttt{\textbackslash{}input} et
+  \texttt{\textbackslash{}include}
+\item
+  commande \texttt{\textbackslash{}includeonly}
+\item
+  dossiers pour les éléments graphiques et commande
+  \texttt{\textbackslash{}graphicspath\{\}}
+\item
+  package \texttt{comment}
+\end{itemize}
+
+\hypertarget{conversions-en-latex-et-word}{%
+\subsection{Conversions en LaTeX et
+Word}\label{conversions-en-latex-et-word}}
+
+\begin{itemize}
+\tightlist
+\item
+  pratiques actuelles
+\item
+  améliorations possibles ? (scripts ?)
+\end{itemize}
+
+Avec la ligne suivante les sections ne sont pas numérotées :
+
+\begin{verbatim}
+pandoc --bibliography=Biblio_These.bib --bibliography=ComplementBibTex -o RevueLit.docx main.tex --citeproc --number-sections
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  utiliser LaTeX pour la mise en page finale\footnote{Par conséquent,
+    rédiger en markdown le reste du temps\ldots{}}
+\end{itemize}
+
+\hypertarget{bibliographies}{%
+\subsection{Bibliographies}\label{bibliographies}}
+
+Convertir un DOI en bibtex. \url{https://www.doi2bib.org/}
+
+\hypertarget{saisie-en-markdown}{%
+\subsection{Saisie en Markdown}\label{saisie-en-markdown}}
+
+\begin{itemize}
+\item
+  un exemple :
+  \url{https://opensource.com/article/18/9/pandoc-research-paper}
+\item
+  gestion des bibliographies avec Zotero et l'extension better-bibtex
+  (Smith and Doe 2023)
+\item
+  exemple de commande à saisir dans un terminal pour exporter en LaTeX :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pandoc {-}f markdown {-}t latex {-}{-}biblatex {-}s FO{-}INRAE{-}approfondissement.md {-}o FO{-}INRAE{-}approfondissement.tex}
+\end{Highlighting}
+\end{Shaded}
+\item
+  éditeur collaboratif en temps réel markdown
+
+  \begin{itemize}
+  \tightlist
+  \item
+    stylo (\url{https://stylo.huma-num.fr/})
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ruxe9daction-collaborative-en-temps-ruxe9el-avec-overleaf}{%
+\section{Rédaction collaborative en temps réel avec
+Overleaf}\label{ruxe9daction-collaborative-en-temps-ruxe9el-avec-overleaf}}
+
+\begin{itemize}
+\tightlist
+\item
+  limites d'Overleaf en version gratuite : 1 collaborateur max avec
+  droit d'écriture\footnote{Une note de bas de page peut être balisée
+    avec un chiffre ou avec un mot, \texttt{pandoc} se charge des
+    compteurs\ldots{}}
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  solutions alternatives :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    gérer les droits d'accès aux différents collaborateurs (écriture,
+    lecture)
+  \item
+    utiliser des gestionnaires de version (github et cie). Limite :
+    asynchrone
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ruxe9capitulatif-benchmark}{%
+\section{Récapitulatif (benchmark)}\label{ruxe9capitulatif-benchmark}}
+
+\hypertarget{nextcloud-inrae}{%
+\subsection{Nextcloud INRAE}\label{nextcloud-inrae}}
+
+\begin{itemize}
+\tightlist
+\item
+  markdown ok
+\item
+  zotero ? fichiers de bibliographie ?
+\item
+  images ?
+\item
+  historique des modifications ?
+\item
+  validation des modifications ?
+\end{itemize}
+
+\hypertarget{github}{%
+\subsection{Github ?}\label{github}}
+
+\hypertarget{overleaf-version-payante}{%
+\subsection{Overleaf version payante}\label{overleaf-version-payante}}
+
+\hypertarget{ruxe9daction-des-thuxe8ses}{%
+\subsubsection{Rédaction des thèses}\label{ruxe9daction-des-thuxe8ses}}
+
+Overleaf pour le côté pragmatique, en version payante. Voir pour une
+version hébergée sur les serveurs INRAE ?
+
+\hypertarget{ruxe9daction-darticles-de-recherches}{%
+\subsubsection{Rédaction d'articles de
+recherches}\label{ruxe9daction-darticles-de-recherches}}
+
+Développer l'instance markdown sur nextcloud INRAE ?
+
+\hypertarget{perspectives}{%
+\section{Perspectives}\label{perspectives}}
+
+Selon nouvelle session de formation 2025-2026 à soumettre.
+
+\hypertarget{utilisation-des-templates-latex}{%
+\subsection{Utilisation des templates
+LaTeX}\label{utilisation-des-templates-latex}}
+
+\begin{itemize}
+\tightlist
+\item
+  rédiger en format basique (article, report, etc.) pour la
+  compatibilité maximale avec d'autres templates
+\item
+  appliquer un template déterminé lorsqu'il existe ou est fournir par
+  une revue
+\item
+  créer des templates propres aux articles et travaux publiés pour
+  Dynafor :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    template écologie
+  \item
+    template SHS
+  \item
+    interdisciplinaire
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{groupe-de-travail-latex}{%
+\subsection{Groupe de travail LaTeX}\label{groupe-de-travail-latex}}
+
+Piloté par infogéom, animé par les utilisateurs LaTeX du laboratoire.
+
+\hypertarget{calendrier-prochaines-sessions}{%
+\section{Calendrier prochaines
+sessions}\label{calendrier-prochaines-sessions}}
+
+\hypertarget{juin}{%
+\subsection{Juin}\label{juin}}
+
+13, 16, 20, 24, 25
+
+\hypertarget{juillet}{%
+\subsection{Juillet}\label{juillet}}
+
+9, 10, 18, 21, 24, 25
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-smith2023economic}{}}%
+Smith, John, and Jane Doe. 2023. {``Economic Statistics and Their Impact
+on Policy Making.''} \emph{Journal of Economic Research} 45 (2):
+123--45.
+
+\end{CSLReferences}
+
+\end{document}

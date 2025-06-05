@@ -14,23 +14,30 @@ bibliography: ExempleBib.bib
 - dossiers pour les éléments graphiques et commande `\graphicspath{}`
 - package `comment`
 
-## Conversions en LaTeX et Word
+## Conversions entre LaTeX et Word
 
 - pratiques actuelles
 - améliorations possibles ? (scripts ?)
 
 Avec la ligne suivante les sections ne sont pas numérotées :
 
-  ```
+  ```shell
   pandoc --bibliography=Biblio_These.bib --bibliography=ComplementBibTex -o RevueLit.docx main.tex --citeproc --number-sections
   ```
 
+Avec celles-ci, c'est correct semble-t-il (pour cet exemple on passe du format markdown du présent au fichier au format LaTeX puis enfin du LaTeX au format docx ; c'est absurde mais c'est juste pour l'exemple ! :-)) :
 
-- utiliser LaTeX pour la mise en page finale[^1]
+  ```shell
+  pandoc -f markdown -t latex -s  --number-sections --bibliography=ExempleBib.bib --citeproc -o test.tex README.md
+  pandoc -f latex -t docx --number-sections test.tex -o test.docx
+  ```
+
+
+**Conclusion :** utiliser LaTeX pour la mise en page finale, écrire en Mardown le plus possible[^1].
 
 ## Bibliographies
 
-Convertir un DOI en bibtex. <https://www.doi2bib.org/>
+Convertir un DOI en BibTeX. <https://www.doi2bib.org/>
 
 
 ## Saisie en Markdown
@@ -66,7 +73,7 @@ Convertir un DOI en bibtex. <https://www.doi2bib.org/>
 - historique des modifications ?
 - validation des modifications ?
 
-## Github ?
+## Github ou GitLab ?
 
 ## Overleaf version payante
 
