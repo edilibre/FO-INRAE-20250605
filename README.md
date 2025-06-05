@@ -42,26 +42,48 @@ Convertir un DOI en BibTeX. <https://www.doi2bib.org/>
 
 ## Saisie en Markdown
 
-- un exemple : <https://opensource.com/article/18/9/pandoc-research-paper>
+Exemples de processus éditoriaux :
+
+- <https://opensource.com/article/18/9/pandoc-research-paper>
+- <https://www.innoq.com/en/blog/2021/12/markdown-with-zotero-workflow/>
 - gestion des bibliographies avec Zotero et l'extension better-bibtex [@smith2023economic]
-- exemple de commande à saisir dans un terminal pour exporter en LaTeX :
+  - <https://retorque.re/zotero-better-bibtex/index.html>
+
+- exemple de commande à saisir dans un terminal pour exporter un fichier Markdown en LaTeX :
   
   ```shell
-  pandoc -f markdown -t latex --biblatex -s FO-INRAE-approfondissement.md -o FO-INRAE-approfondissement.tex
+  pandoc -f markdown -t latex --biblatex -s README.md -o FO-INRAE-approfondissement.tex
   ```
 
-- éditeur collaboratif en temps réel markdown
-  - stylo (<https://stylo.huma-num.fr/>)
+Quelques solutions d'édition collaborative avec Markdown qui proposent une fonction d'exportation :
+- <https://hackmd.io/>
+- <https://www.markdowntutorial.com/>
+- stylo (<https://stylo.huma-num.fr/>)
 
-# Rédaction collaborative en temps réel avec Overleaf
+# Rédaction collaborative avec Overleaf
 
-- limites d'Overleaf en version gratuite : 1 collaborateur max avec droit d'écriture[^droits]
+- limites d'Overleaf en version gratuite : 
+  - 1 collaborateur max avec droit d'écriture[^droits]
+  - pas de connexion à un dépôt git
+  - pas de connexion à Zotero
 
-[^droits]: Une note de bas de page peut être balisée avec un chiffre ou avec un mot, `pandoc` se charge des compteurs...
+[^droits]: En version gratuite, Overleaf permet de travailler à plusieurs sur un même document, mais avec des droits d'écriture limités à un seul collaborateur. En version payante, il est possible de travailler à plusieurs avec des droits d'écriture pour tous les collaborateurs.
+
+- avantages d'Overleaf en version payante :
+  - interface intuitive
+  - gestion des versions
+  - exportation en PDF, LaTeX, etc.
+  - gestion des bibliographies avec Zotero
+  - gestion des figures et images
+  - gestion des commentaires et discussions
+
+- inconvénients d'Overleaf :
+  - dépendance à un service externe
+  - coût de la version payante
 
 - solutions alternatives :
   - gérer les droits d'accès aux différents collaborateurs (écriture, lecture)
-  - utiliser des gestionnaires de version (github et cie). Limite : asynchrone
+  - utiliser des gestionnaires de version (github et cie).
 
 # Récapitulatif (benchmark)
 
